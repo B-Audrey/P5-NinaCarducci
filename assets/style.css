@@ -40,6 +40,7 @@ body {
 
 .social-link img {
 	width: 20px;
+	height: 20px;
 }
 
 #about {
@@ -69,7 +70,6 @@ body {
 
 .picture img {
 	width: 100%;
-
 }
 #about-me {
 	flex: 2
@@ -89,10 +89,6 @@ body {
 	width: 80%;
 	font-size: 14px;
 }
-
-#gallery {
-	/*	min-height: 100vh; */
-}
 .title{
 	text-align: center;
 	padding-block: 2em;
@@ -102,7 +98,7 @@ body {
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
 	color: #fff;
-	background-color: #BEB45A;
+	background-color: goldenrod;
 	border-radius:0 ;
 }
 .nav-pills .nav-link {
@@ -244,6 +240,10 @@ input[type="submit"] {
 	padding: .5em 1em
 }
 
+footer{
+	text-align: center;
+	margin: 1%;
+}
 @media all and (max-width: 1180px) {
 	.picture {
 		flex : 2;
@@ -327,6 +327,7 @@ input[type="submit"] {
 	.top-header .nav, .top-header .nav ul {
 		width: 100%;
 		padding: 0 0 0 0;
+		flex-wrap: wrap;
 	}
 	.top-header .nav li {
 		flex: 1;
