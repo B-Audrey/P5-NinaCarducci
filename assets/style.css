@@ -115,13 +115,84 @@ body {
 	padding-bottom: 100%;
 
 }
+.gallery{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.gallery_buttons{
+	display: flex;
+	justify-content: space-evenly ;
+	flex-wrap: wrap;
+	width: 60%;
+	margin: auto;
+}
+.gallery_buttons button{
+	background-color: white;
+	border: none;
+	font-size: 1.5em;
+}
+.gallery_buttons button:focus {
+	background-color: goldenrod;
+}
+/* DELETE THE AUTO BORDER WHEN FOCUS AUTO AT 1st TIME */
+.gallery_buttons button:focus-visible{
+	outline: none;
+}
 .gallery-item {
-	position: absolute;
 	width: 100%;
-	height: 100%;
+	height: 450px;
 	object-fit: cover;
 	padding: .5em;
+	object-fit: cover;
 }
+.modalBackground{
+	position: fixed;
+	width: 100%;
+    height: 100%;
+    top: 0;
+	left: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	z-index: 2000;
+}
+.picture_modal-container{
+    width: 800px;
+    max-height: 1000px;
+    background: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.navModalButtons{
+	display: flex;
+	align-items: center;
+}
+.navModalButtons button{
+	font-size: 4em;
+	color: goldenrod;
+	border: none;
+	background-color: transparent;
+}
+.zoomDisplay img{
+	width : 600px;
+	height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .mg-prev, .mg-next {
 	width: 30px;
 	height: 30px;
@@ -281,6 +352,9 @@ footer{
 		text-align: center;
 		margin-top: 1em;
 	}
+	.gallery-item{
+		height: 250px;
+	}
 	#services .container {
 		flex-direction: column;
 	}
@@ -317,7 +391,45 @@ footer{
 		right: 0;
 		z-index: -1;
 	}
+
+	.picture_modal-container{
+		width: 600px;
+		max-height: 800px;
+	}
+	.zoomDisplay img{
+		width : 400px;
+		height: auto;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media all and (max-width: 650px) {
 	.top-header {
@@ -352,6 +464,17 @@ footer{
 	}
 	.picture {
 		width: 80%;
+	}
+	.gallery-item{
+		height: 150px;
+	}
+	.picture_modal-container{
+		width: 350px;
+		max-height: 800px;
+	}
+	.zoomDisplay img{
+		width : 250px;
+		height: auto;
 	}
 }
 
