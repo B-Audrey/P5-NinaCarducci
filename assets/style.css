@@ -180,19 +180,6 @@ body {
 	height: auto;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .mg-prev, .mg-next {
 	width: 30px;
 	height: 30px;
@@ -401,35 +388,6 @@ footer{
 		height: auto;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media all and (max-width: 650px) {
 	.top-header {

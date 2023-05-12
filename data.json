@@ -2,46 +2,55 @@
     "id" : "1",
     "category" : "concert",
     "url" : "./assets/images/gallery/concerts/concert_picture_aaron_paul.webp",
+    "smallUrl" : "./assets/images/gallery_small/concerts/concert_picture_aaron_paul.webp",
     "alt" : "photo de concert aaron"
 },{
     "id" : "2",
     "category" : "entreprise",
     "url" : "./assets/images/gallery/entreprise/society_picture_ali_morshedlou.webp",
+    "smallUrl" : "./assets/images/gallery_small/entreprise/society_picture_ali_morshedlou.webp",
     "alt" : "photo d'entreprise ali"
 },{
     "id" : "3",
     "category" : "entreprise",
     "url" : "./assets/images/gallery/entreprise/society_picture_jason_goodman.webp",
+    "smallUrl" : "./assets/images/gallery_small/entreprise/society_picture_jason_goodman.webp",
     "alt" : "photo d'entreprise jason"
 },{
     "id" : "4",
     "category" : "mariage",
     "url" : "./assets/images/gallery/mariage/mariage_picture_hannah_busing.webp",
+    "smallUrl" : "./assets/images/gallery_small/mariage/mariage_picture_hannah_busing.webp",
     "alt" : "photo de mariage hannah"
 },{
     "id" : "5",
     "category" : "portrait",
     "url" : "./assets/images/gallery/portraits/portrait_picture_ade_tunji.webp",
+    "smallUrl" : "./assets/images/gallery_small/portraits/portrait_picture_ade_tunji.webp",
     "alt" : "photo de portrait ade"
 },{
     "id" : "6",
     "category" : "mariage",
     "url" : "./assets/images/gallery/mariage/mariage_picture_jakob_owen.webp",
+    "smallUrl" : "./assets/images/gallery_small/mariage/mariage_picture_jakob_owen.webp",
     "alt" : "photo de mariage jakob"
 },{
     "id" : "7",
     "category" : "portrait",
     "url" : "./assets/images/gallery/portraits/portrait_picture_nino_van_prattenburg.webp",
+    "smallUrl" : "./assets/images/gallery_small/portraits/portrait_picture_nino_van_prattenburg.webp",
     "alt" : "photo de portrait nino"
 },{
     "id" : "8",
     "category" : "concert",
     "url" : "./assets/images/gallery/concerts/concert_picture_austin_neil.webp",
+    "smallUrl" :  "./assets/images/gallery_small/concerts/concert_picture_austin_neil.webp",
     "alt" : "photo de concert austin"
 },{
     "id" : "9",
     "category" : "entreprise",
     "url" : "./assets/images/gallery/entreprise/society_picture_mateus_campos_felipe.webp",
+    "smallUrl" : "./assets/images/gallery_small/entreprise/society_picture_mateus_campos_felipe.webp",
     "alt" : "photo d'entreprise mateus"
 }
 ]

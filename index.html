@@ -5,8 +5,8 @@
 		<title>Nina Carducci - Photographe professionnelle à Bordeaux</title>
 		<meta name="description" content="Nina Carducci, photographe professionnelle - Je propose mes services de Shooting Photos, Retouches, Création pour vos évènements ou en séance personnalisée.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
-		<link rel="stylesheet" href="./assets/style.css">
+		<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="./assets/style.min.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://nina-carducci.github.io/">
@@ -42,12 +42,7 @@
 					<li><a href="#gallery">Galerie</a></li>
 					<li><a href="#services">Service</a></li>
 					<li><a href="#contact">Contact</a></li>
-				</ul>
-				<ul>
 					<li><a class="social-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr" target="_blank"><img src="assets/images/instagram.png" alt="lien instagram"></a></li>
-					<li><a class="social-link" href="https://www.facebook.com/" target="_blank"><img src="assets/images/facebook.png" alt="lien facebook"></a></li>
-					<li><a class="social-link" href="https://www.linkedin.com/" target="_blank"><img src="assets/images/linkedIn.png" alt="lien linkedin"></a></li>
-					<li><a class="social-link" href="https://www.twitter.com/" targer="_blank"> <img src="assets/images/twitter.png" alt="lien twitter"></a></li>
 				</ul>
 			</nav>
 		</header>
@@ -104,7 +99,7 @@
 						<div class="navModalButtons">
 							<button id="previousModalButton"> < </button>
 								<div class="zoomDisplay">
-
+									<!--fill in with JS file-->
 								</div>
 							<button id="nextModalButton"> > </button>
 						</div>
@@ -177,7 +172,7 @@
 					</form>
 				</div>
 				<div class="picture right">
-					<img src="./assets/images/camera.webp" alt="appareil photo">
+					<img src="./assets/images/camera.webp" loading="lazy" alt="appareil photo">
 				</div>
 			</div>
 		</div>
@@ -198,9 +193,6 @@
 			</div>
 		</footer>
 	</body>
-	<script async src="./assets/bootstrap/bootstrap.bundle.js"></script>
-	<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script async src="./assets/maugallery.js"></script> -->
-	<!-- <script async src="./assets/scripts.js"></script> -->
-	<script async src="./scipts/script.js" type="module"></script>
+	<script async src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+	<script async src="./script.js" type="module"></script>
 </html>

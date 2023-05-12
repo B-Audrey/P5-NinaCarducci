@@ -1,6 +1,6 @@
 //FUNCTIONS OF THE DOCUMENT
 const getData = async () => {
-    const response = await fetch('./scipts/data.json');
+    const response = await fetch('./data.json');
     return await response.json();
 }
 
@@ -51,21 +51,21 @@ const createImgElement = (pictureToDisplay, whereToDisplay) => {
     const img = document.createElement('img');
     img.src = pictureToDisplay.url;
     img.alt = pictureToDisplay.alt;
-    img.id = pictureToDisplay.id; //
+    img.id = pictureToDisplay.id;
     img.className = 'gallery-item ' + pictureToDisplay.category;
     whereToDisplay.appendChild(img);
 }
 //-------------
 
 //VARIABLES OF THE DOCUMENT
-const pictures = await getData(); //original full data
+export const pictures = await getData(); //original full data
 export let imgsArrayToDisplay = pictures; //data that can be modified
 const categories = ['Tous', 'Concert', 'Entreprise', 'Mariage', 'Portrait'];
 //----------
 
 
 //EXPORT FUNCTIONS FOR MAIN CONTENT
-export const displayInGallery = (pictures) => {
+export const listenPicturesInGallery = (pictures) => {
     document.querySelector('.gallery').innerHTML=('');
     if(pictures.length === 0){
         const text = document.createElement('p');
@@ -74,13 +74,13 @@ export const displayInGallery = (pictures) => {
 
     for(let picture of pictures) {
         const img = document.createElement('img');
-        img.src = picture.url;
+        img.src = picture.smallUrl;
         img.alt = picture.alt;
         img.id = picture.id;
+        img.loading = 'lazy';
         img.className = 'gallery-item ' + picture.category;
         document.querySelector('.gallery').appendChild(img);
     };
-    console.log(imgsArrayToDisplay)
     listenImgForModalOpening();
 }
 
@@ -95,7 +95,7 @@ export const displayFilterButtons = () => {
     document.querySelector('.gallery_buttons .tous').focus();
 }
 
-export const filterResult = (pictures) =>{
+export const ListenButtonsToFilterResult = (pictures) =>{
     const buttons = document.querySelectorAll('.gallery_buttons button');
     
     for (let currentButton of buttons) {
@@ -103,13 +103,13 @@ export const filterResult = (pictures) =>{
             imgsArrayToDisplay = pictures.filter( (picture) => {
                 return picture.category === currentButton.className;
             })
-            displayInGallery(imgsArrayToDisplay);
+            listenPicturesInGallery(imgsArrayToDisplay);
         })
     }
 
     document.querySelector('.gallery_buttons .tous').addEventListener('click', () => {
         imgsArrayToDisplay = pictures;
-        displayInGallery(imgsArrayToDisplay);
+        listenPicturesInGallery(imgsArrayToDisplay);
     });
 }
 
