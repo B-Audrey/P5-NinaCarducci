@@ -1,14 +1,15 @@
-//FUNCTIONS OF THE DOCUMENT
-const getData = async () => {
-    const response = await fetch('./data.json');
-    return await response.json();
-}
+//VARIABLES OF THE DOCUMENT
+const data = await fetch('./data.json'); //original full data
+export const pictures = await data.json() 
+export let imgsArrayToDisplay = pictures; //data that can be modified
+const modalPlace = document.querySelector('.zoomDisplay');
+//----------
 
-const listenImgForModalOpening = () => {
+//FUNCTIONS OF THE DOCUMENT
+export const listenImgForModalNavigation = () => {
     const actualImgs = document.querySelectorAll('.gallery img');
-    const modalPlace = document.querySelector('.zoomDisplay');
     let imgIndex = 0;
-    
+
     for (const img of actualImgs) {
         img.addEventListener( 'click', (event) => {
             showModal(true);
@@ -20,79 +21,49 @@ const listenImgForModalOpening = () => {
     
     document.getElementById('previousModalButton').addEventListener('click', () => {
         if (imgIndex >= 1) {
-            console.log(imgsArrayToDisplay[imgIndex])
-            modalPlace.innerHTML=('');
             imgIndex -= 1;
             createImgElement(imgsArrayToDisplay[imgIndex], modalPlace);
         }
         else if (imgIndex === 0) {
             imgIndex = imgsArrayToDisplay.length-1;
-            modalPlace.innerHTML=('');
             createImgElement(imgsArrayToDisplay[imgIndex], modalPlace);
         }     
     })
     
     document.getElementById('nextModalButton').addEventListener('click', () => {
         if (imgIndex < imgsArrayToDisplay.length-1 && imgIndex >= 0) {
-            console.log(imgsArrayToDisplay[imgIndex])
-            modalPlace.innerHTML=('');
             imgIndex += 1;
             createImgElement(imgsArrayToDisplay[imgIndex], modalPlace);
         }
         else if (imgIndex === imgsArrayToDisplay.length-1) {
             imgIndex = 0;
-            modalPlace.innerHTML=('');
             createImgElement(imgsArrayToDisplay[imgIndex], modalPlace);
         }
     })
 }
 
 const createImgElement = (pictureToDisplay, whereToDisplay) => {
-    const img = document.createElement('img');
-    img.src = pictureToDisplay.url;
-    img.alt = pictureToDisplay.alt;
-    img.id = pictureToDisplay.id;
-    img.className = 'gallery-item ' + pictureToDisplay.category;
-    whereToDisplay.appendChild(img);
+    modalPlace.innerHTML=('');
+    const html = `<img class='gallery-item ${pictureToDisplay.category}' src='${pictureToDisplay.url}' alt='${pictureToDisplay.alt}' id='${pictureToDisplay.id} loading='lazy'>`;
+    whereToDisplay.innerHTML = html;
 }
 //-------------
 
-//VARIABLES OF THE DOCUMENT
-export const pictures = await getData(); //original full data
-export let imgsArrayToDisplay = pictures; //data that can be modified
-const categories = ['Tous', 'Concert', 'Entreprise', 'Mariage', 'Portrait'];
-//----------
-
-
 //EXPORT FUNCTIONS FOR MAIN CONTENT
-export const listenPicturesInGallery = (pictures) => {
-    document.querySelector('.gallery').innerHTML=('');
+export const displayPicturesInGallery = (pictures) => {
+    const gallery = document.querySelector('.gallery');
+    gallery.innerHTML=('');
+    let html = '';
     if(pictures.length === 0){
         const text = document.createElement('p');
         text.innerText = 'Pas d\'images afficher';
     }
 
     for(let picture of pictures) {
-        const img = document.createElement('img');
-        img.src = picture.smallUrl;
-        img.alt = picture.alt;
-        img.id = picture.id;
-        img.loading = 'lazy';
-        img.className = 'gallery-item ' + picture.category;
-        document.querySelector('.gallery').appendChild(img);
-    };
-    listenImgForModalOpening();
-}
-
-export const displayFilterButtons = () => {
-    for (let currentCategory of categories) {
-        const button = document.createElement('button');
-        button.className = currentCategory.toLowerCase()
-        button.type = 'button';
-        button.innerText = currentCategory;
-        document.querySelector('.gallery_buttons').appendChild(button);
+        html += `<img class='gallery-item ${picture.category}' src='${picture.smallUrl}' alt='${picture.alt}' id='${picture.id}' loading='lazy'>`;
     }
-    document.querySelector('.gallery_buttons .tous').focus();
+    gallery.innerHTML = html;
+    listenImgForModalNavigation()
 }
 
 export const ListenButtonsToFilterResult = (pictures) =>{
@@ -103,13 +74,14 @@ export const ListenButtonsToFilterResult = (pictures) =>{
             imgsArrayToDisplay = pictures.filter( (picture) => {
                 return picture.category === currentButton.className;
             })
-            listenPicturesInGallery(imgsArrayToDisplay);
+            displayPicturesInGallery(imgsArrayToDisplay);
         })
     }
 
     document.querySelector('.gallery_buttons .tous').addEventListener('click', () => {
         imgsArrayToDisplay = pictures;
-        listenPicturesInGallery(imgsArrayToDisplay);
+        displayPicturesInGallery(imgsArrayToDisplay);
+
     });
 }
 

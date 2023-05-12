@@ -50,7 +50,9 @@ body {
 	padding-block: 100px;
 	position: relative;
 }
-
+.carousel-item img{
+	aspect-ratio: 16 / 7.4;
+}
 .picture.left::before {
 	content: ' ';
 	background-color: #E5975F;
@@ -70,6 +72,7 @@ body {
 
 .picture img {
 	width: 100%;
+	aspect-ratio: 1 / 1;
 }
 #about-me {
 	flex: 2
@@ -132,7 +135,7 @@ body {
 	font-size: 1.5em;
 }
 .gallery_buttons button:focus {
-	background-color: goldenrod;
+	background-color: #beb45a;
 }
 /* DELETE THE AUTO BORDER WHEN FOCUS AUTO AT 1st TIME */
 .gallery_buttons button:focus-visible{
