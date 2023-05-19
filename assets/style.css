@@ -134,7 +134,7 @@ body {
 	border: none;
 	font-size: 1.5em;
 }
-.gallery_buttons button:focus {
+.gallery_buttons button:focus, .gallery_buttons button:hover {
 	background-color: #beb45a;
 }
 /* DELETE THE AUTO BORDER WHEN FOCUS AUTO AT 1st TIME */
@@ -177,6 +177,10 @@ body {
 	color: goldenrod;
 	border: none;
 	background-color: transparent;
+}
+
+.navModalButtons button:focus{
+	border: 1px, solid, black;
 }
 .zoomDisplay img{
 	width : 600px;

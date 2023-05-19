@@ -6,7 +6,7 @@
 		<meta name="description" content="Nina Carducci, photographe professionnelle - Je propose mes services de Shooting Photos, Retouches, Création pour vos évènements ou en séance personnalisée.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
-		<link rel="stylesheet" href="./assets/style.min.css">
+		<link rel="stylesheet" href="./assets/style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://nina-carducci.github.io/">
@@ -97,17 +97,17 @@
 			<div class="gallery container py-3">
 				<!--fill in with JS file-->
 			</div>
-			<div class="modalBackground" style="display: none;">
+			<aside class="modalBackground" style="display: none;" aria-hidden="true">
 				<div class="picture_modal-container" id="stopPropagation">
 					<div class="navModalButtons">
-						<button id="previousModalButton"> < </button>
+						<button id="previousModalButton" aria-label="Previous picture"> < </button>
 							<div class="zoomDisplay">
 								<!--fill in with JS file-->
 							</div>
-						<button id="nextModalButton"> > </button>
+						<button id="nextModalButton" aria-label="Next picture"> > </button>
 					</div>
 				</div>
-			</div>
+			</aside>
 			<figure class="quote">
 				<blockquote class="quote__text">
 					Un portrait n'est pas une ressemblance. Dès lors qu'une émotion ou qu'un fait est traduit en photo, il cesse d'être un fait pour devenir une opinion. L'inexactitude n'existe pas en photographie. Toutes les photos sont exactes. Aucune d'elles n'est la vérité.
@@ -192,7 +192,7 @@
 				</div>
 			</div>
 		</footer>
+		<script async src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+		<script async src="./script.js" type="module"></script>
 	</body>
-	<script async src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
-	<script async src="./script.min.js" type="module"></script>
 </html>
