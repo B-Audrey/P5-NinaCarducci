@@ -1,5 +1,5 @@
-import { displayPicturesInGallery, listenButtonsToFilterResult, showModal, imgsArrayToDisplay, createImgElement, modal} from './functions.js';
-import { navigator } from './class.js';
+import { displayPicturesInGallery, listenButtonsToFilterResult, showModal, imgsArrayToDisplay, createImgElement, modal} from './functions.min.js';
+import { navigator } from './class.min.js';
 const modalPlace = document.querySelector('.zoomDisplay');
 const previousButton = document.getElementById('previousModalButton');
 const nextbutton = document.getElementById('nextModalButton');

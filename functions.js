@@ -1,4 +1,4 @@
-import { navigator } from './class.js';
+import { navigator } from './class.min.js';
 //VARIABLES OF THE DOCUMENT
 const data = await fetch('./data.json'); //original full data
 export const pictures = await data.json() 
