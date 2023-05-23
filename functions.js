@@ -1,11 +1,10 @@
-import { ModalNavigator } from './class.js';
+import { navigator } from './class.js';
 //VARIABLES OF THE DOCUMENT
 const data = await fetch('./data.json'); //original full data
 export const pictures = await data.json() 
 export let imgsArrayToDisplay = pictures; //data that can be modified
 export let imgIndex = 0;
 const modalPlace = document.querySelector('.zoomDisplay');
-export let navigator = null;
 export let modal = false;
 //----------
 
@@ -14,7 +13,7 @@ const listenImgsToOpenModal = () => {
     const actualImgs = document.querySelectorAll('.gallery img');
     for (const img of actualImgs) {
         img.addEventListener( 'click', (event) => {
-            openModalwithSelectedImg(event)
+            openModalwithSelectedImg(event);
         });
         img.addEventListener('keydown', (event) => {
             if(event.key === 'Enter'){
@@ -27,9 +26,9 @@ const listenImgsToOpenModal = () => {
 const openModalwithSelectedImg = (event) => {
     const imgId = event.target.id;
     imgIndex = imgsArrayToDisplay.findIndex( (element) => element.id === imgId);
+    navigator.init(imgIndex, imgsArrayToDisplay);
     showModal(true);
-    createImgElement(imgsArrayToDisplay[imgIndex], modalPlace);
-    navigator = new ModalNavigator(imgIndex, imgsArrayToDisplay);
+    createImgElement(navigator.getCurrentImg(), modalPlace);
 }
 //-------------
 
@@ -77,5 +76,8 @@ export const showModal = (display = true) => {
     const modalBackground = document.querySelector('.modalBackground');
     modalBackground.style.display = display ? 'flex' : 'none';
     modalBackground.ariaHidden = display ? 'false' : 'true';
+    if(!display){
+        navigator.reset();
+    }
 }
 //---------------------

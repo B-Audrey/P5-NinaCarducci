@@ -1,5 +1,5 @@
-import { displayPicturesInGallery, listenButtonsToFilterResult, showModal, imgsArrayToDisplay, createImgElement, navigator, modal} from './functions.min.js';
-
+import { displayPicturesInGallery, listenButtonsToFilterResult, showModal, imgsArrayToDisplay, createImgElement, modal} from './functions.js';
+import { navigator } from './class.js';
 const modalPlace = document.querySelector('.zoomDisplay');
 const previousButton = document.getElementById('previousModalButton');
 const nextbutton = document.getElementById('nextModalButton');
@@ -15,12 +15,12 @@ document.querySelector('.modalBackground').addEventListener('click', () => {
 document.getElementById('stopPropagation').addEventListener('click', (event) => event.stopPropagation());
 
 previousButton.addEventListener('click', () => {
-    navigator.goToPreviousIndex();
-    createImgElement(navigator.elementsToDisplay[navigator.currentValue], modalPlace);
+    const previous = navigator.goToPreviousIndex();
+    createImgElement(previous, modalPlace);
 });
 nextbutton.addEventListener('click', () => {
-    navigator.goToNextIndex();
-    createImgElement(navigator.elementsToDisplay[navigator.currentValue], modalPlace);
+    const next = navigator.goToNextIndex();
+    createImgElement(next, modalPlace);
 });
 
 window.addEventListener('keydown', (e) => {

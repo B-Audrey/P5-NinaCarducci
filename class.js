@@ -1,10 +1,15 @@
-export class ModalNavigator {
+class ModalNavigator {
     currentValue = 0;
     elementsToDisplay = [];
 
-    constructor (currentValue, elementsToDisplay) {
+    init(currentValue, elementsToDisplay) {
         this.currentValue = currentValue;
         this.elementsToDisplay = elementsToDisplay;
+    };
+
+    reset(){
+        this.currentValue = 0;
+        this.elementsToDisplay = [];
     };
     
     goToNextIndex() {
@@ -14,6 +19,7 @@ export class ModalNavigator {
         else if (this.currentValue === this.elementsToDisplay.length-1) {
             this.currentValue = 0;
         }
+        return this.getCurrentImg();   
     };
 
     goToPreviousIndex() {
@@ -22,6 +28,13 @@ export class ModalNavigator {
         }
         else if (this.currentValue === 0) {
             this.currentValue = this.elementsToDisplay.length-1;
-        }     
+        }
+        return this.getCurrentImg();     
     };
+
+    getCurrentImg() {
+        return this.elementsToDisplay[this.currentValue];
+    }
 }
+
+export const navigator = new ModalNavigator();
